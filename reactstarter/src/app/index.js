@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+require('../css/todo-list.scss');
+
 // Create component
 var TodoComponent = React.createClass({
     getInitialState: function(){
@@ -16,8 +18,8 @@ var TodoComponent = React.createClass({
             });
         }.bind(this), 5000);
         return(
-            <div id="todo-list">
-                <p>The busiest people have teh most leisure...</p>
+            <div id="todo-list" className = "this-is-a-class-in-jsx">
+                <p>The busiest people have the most leisure...</p>
                 <p>{this.state.age}</p>
                 <ul>
                     <li>{this.state.todos[0]}</li>

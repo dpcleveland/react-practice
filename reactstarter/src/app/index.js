@@ -7,28 +7,38 @@ require('../css/todo-list.scss');
 var TodoComponent = React.createClass({
     getInitialState: function(){
         return {
-            todos: ['wash up', 'eat', 'take a nap'],
-            age: 30
+            todos: ['wash up', 'eat', 'take a nap', 'study']
         }
     },
     render: function(){
-        var ager = setTimeout(function(){
-            this.setState({
-                age: 35
-            });
-        }.bind(this), 5000);
+        var todos = this.state.todos;
+        todos = todos.map(function(item, index){
+            return(
+                <TodoItem key={index} item={item} />
+            );
+        });
         return(
-            <div id="todo-list" className = "this-is-a-class-in-jsx">
+            <div id="todo-list">
                 <p>The busiest people have the most leisure...</p>
-                <p>{this.state.age}</p>
                 <ul>
-                    <li>{this.state.todos[0]}</li>
-                    <li>{this.state.todos[1]}</li>
-                    <li>{this.state.todos[2]}</li>
+                    {todos}
                 </ul>
             </div>
         );
     } // render
+});
+
+// Create TodoItem component
+var TodoItem = React.createClass({
+    render: function(){
+        return(
+            <li>
+                <div className="todo-item">
+                    <span className="item-name">{this.props.item}</span>
+                </div>
+            </li>
+        );
+    }
 });
 
 // Put component into HTML page

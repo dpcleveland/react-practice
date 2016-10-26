@@ -3,7 +3,11 @@ import React from "react";
 export default class Archives extends React.Component {
   render() {
     return (
-      <h1>Archives</h1>
+        <div>
+            <h1>Archives</h1>
+            <p>Text for the archives page</p>
+        </div>
+
     );
   }
 }

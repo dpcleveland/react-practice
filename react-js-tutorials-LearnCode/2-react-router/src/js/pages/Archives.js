@@ -20,6 +20,20 @@ export default class Archives extends React.Component {
             "Mexican Article"
         ].map((title, i) => <Article key={i} title={title}/>);
 
+        // Trying out articles in an object
+        /*
+        const Articles = {
+            {
+                title: "Some Article",
+                content: "Lorem ipsum"
+            },
+            {
+                title: "Some Other Article",
+                content: "Lorem ipsum"
+            }
+        }
+        */
+
         return (
             <div>
                 <h1>Archives</h1>

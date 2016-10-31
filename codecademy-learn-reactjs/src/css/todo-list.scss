@@ -1,0 +1,9 @@
+$main-color: #333333;
+$secondary-color: #ffffff;
+
+#todo-list {
+    border: 2px solid $main-color;
+    color: $main-color;
+    margin: auto 200px auto 200px;
+    padding: 25px;
+}

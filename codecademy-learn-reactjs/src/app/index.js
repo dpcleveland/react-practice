@@ -1,10 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var componentBlueprint = {
+var MyComponentClass = React.createClass({
     render: function(){
         return <h1>Hello world</h1>
     }
-};
-
-var MyComponentClass = React.createClass(componentBlueprint);
+});

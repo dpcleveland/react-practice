@@ -1,25 +1,28 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var QuoteMaker = React.createClass({
+var owl = {
+    title: "Excellent Owl",
+    src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-owl.jpg"
+};
+
+var Owl = React.createClass({
     render: function(){
         return (
-            <blockquote>
-                <p>
-                    What is important now is to recover our senses.
-                </p>
-                <cite>
-                    <a target="_blank"
-                    href="http://bit.ly/1LvSLUA">
-                    Susan Sontag
-                    </a>
-                </cite>
-            </blockquote>
+            <div>
+                <h1>
+                    {owl.title}
+                </h1>
+                <img
+                    src = {owl.src}
+                    alt = {owl.title}
+                />
+            </div>
         );
     }
 });
 
 ReactDOM.render(
-	<QuoteMaker />,
+	<Owl />,
 	document.getElementById('app')
 );

@@ -1,13 +1,25 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var MyComponentClass = React.createClass({
+var QuoteMaker = React.createClass({
     render: function(){
-        return <h1>Hello world</h1>
+        return (
+            <blockquote>
+                <p>
+                    What is important now is to recover our senses.
+                </p>
+                <cite>
+                    <a target="_blank"
+                    href="http://bit.ly/1LvSLUA">
+                    Susan Sontag
+                    </a>
+                </cite>
+            </blockquote>
+        );
     }
 });
 
 ReactDOM.render(
-	<MyComponentClass />,
+	<QuoteMaker />,
 	document.getElementById('app')
 );

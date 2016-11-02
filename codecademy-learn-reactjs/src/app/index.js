@@ -1,28 +1,31 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var owl = {
-    title: "Excellent Owl",
-    src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-owl.jpg"
-};
+var friends = [
+    {
+        title: "Yummmmmmm",
+        src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-monkeyweirdo.jpg"
+    }, {
+        title: "Hey Guys!  Wait Up!",
+        src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-earnestfrog.jpg"
+    }, {
+        title: "Yikes",
+        src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-alpaca.jpg"
+    }
+];
 
-var Owl = React.createClass({
-    render: function(){
+// New component class starts here:
+var Friend = React.createClass({
+    render: function() {
+        var friend = friends[2];
         return (
             <div>
-                <h1>
-                    {owl.title}
-                </h1>
-                <img
-                    src = {owl.src}
-                    alt = {owl.title}
-                />
+                <h1>{friend.title}</h1>
+                <img src={friend.src}/>
             </div>
         );
     }
 });
 
 ReactDOM.render(
-	<Owl />,
-	document.getElementById('app')
-);
+    <Friend/>, document.getElementById('app'));

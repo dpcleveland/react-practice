@@ -1,31 +1,21 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var friends = [
-    {
-        title: "Yummmmmmm",
-        src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-monkeyweirdo.jpg"
-    }, {
-        title: "Hey Guys!  Wait Up!",
-        src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-earnestfrog.jpg"
-    }, {
-        title: "Yikes",
-        src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-alpaca.jpg"
-    }
-];
+var fiftyFifty = Math.random() < 0.5;
 
-// New component class starts here:
-var Friend = React.createClass({
+// React.createClass call begins here:
+var TonightsPlan = React.createClass({
     render: function() {
-        var friend = friends[2];
-        return (
-            <div>
-                <h1>{friend.title}</h1>
-                <img src={friend.src}/>
-            </div>
-        );
+        var result = undefined;
+        if (fiftyFifty) {
+            result = "Tonight I'm going out WOOO";
+        } else {
+            result = "Tonight I'm going to bed WOOO";
+        }
+
+        return <h1>{result}</h1>;
+
     }
 });
-
 ReactDOM.render(
-    <Friend/>, document.getElementById('app'));
+    <TonightsPlan/>, document.getElementById('app'));

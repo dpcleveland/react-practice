@@ -23,3 +23,5 @@ var NavBar = React.createClass({
         return <nav>{navLinks}</nav>;
     }
 });
+
+module.exports = NavBar;

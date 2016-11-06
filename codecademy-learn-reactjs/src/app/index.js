@@ -1,14 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Button = React.createClass({
-  scream: function () {
-    alert('AAAAAAAAHHH!!!!!');
-  },
-
+var PropsDisplayer = React.createClass({
   render: function () {
-    return <button onClick={this.scream}>AAAAAH!</button>;
+  	var stringProps = JSON.stringify(this.props);
+
+    return (
+      <div>
+        <h1>CHECK OUT MY PROPS OBJECT</h1>
+        <h2>{stringProps}</h2>
+      </div>
+    );
   }
 });
 
-ReactDOM.render(<Button />, document.getElementById('app'));
+// ReactDOM.render goes here:
+ReactDOM.render(<PropsDisplayer />, document.getElementById('app'));

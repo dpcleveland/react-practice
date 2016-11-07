@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Greeting = require('./Greeting');
 
 var App = React.createClass({
     render: function() {
@@ -8,6 +9,8 @@ var App = React.createClass({
                 <h1>
                     Hullo and, "Welcome to The Newzz," "On Line!"
                 </h1>
+
+                <Greeting name="Daniel"/>
 
                 <article>
                     Latest newzz: where is my phone?

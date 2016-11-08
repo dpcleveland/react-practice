@@ -9,11 +9,9 @@ var App = React.createClass({
                 <h1>
                     Hullo and, "Welcome to The Newzz," "On Line!"
                 </h1>
-
-                <Greeting name="Daniel"/>
-
+                <Greeting name="Alison" signedIn={true}/>
                 <article>
-                    Latest newzz: where is my phone?
+                    Latest: where is my phone?
                 </article>
             </div>
         );

@@ -3,7 +3,7 @@ var React = require('react');
 var Button = React.createClass({
     render: function() {
         return (
-            <button>
+            <button onClick={this.props.talk}>
                 Click me!
             </button>
         );

@@ -1,14 +1,24 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Child = require('./Child');
+var ChildClass = require('./ChildClass');
 
-var Parent = React.createClass({
-	getInitialState: function(){
-		return { name: 'Frarthur' };
-	},
-	render: function(){
-		return <Child name={this.state.name} />;
-	}
+var ParentClass = React.createClass({
+  getInitialState: function () {
+    return { totalClicks: 0 };
+  },
+
+  handleClick: function () {
+    var total = this.state.totalClicks;
+    this.setState(
+      { totalClicks: total + 1 }
+    );
+  },
+
+  // The stateful component class passes down
+  // handleClick to a stateless component class:
+  render: function () {
+    return (
+      <ChildClass onClick={this.handleClick} />
+    );
+  }
 });
-
-ReactDOM.render(<Parent />, document.getElementById('app'));

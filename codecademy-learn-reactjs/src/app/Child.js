@@ -1,19 +1,28 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 
-var ChildClass = React.createClass({
+var Child = React.createClass({
   render: function () {
     return (
+      <div>
+        <h1>
+          Hey my name is {this.props.name}!
+        </h1>
+        <select id="great-names">
+          <option value="Frarthur">
+            Frarthur
+          </option>
 
-      // The stateless component class uses 
-      // the passed-down handleClick function, 
-      // accessed here as this.props.onClick,
-      // as an event handler:
-      <button onClick={this.props.onClick}>
-        Click Me!
-      </button>
+          <option value="Gromulus">
+            Gromulus
+          </option>
+
+          <option value="Thinkpiece">
+            Thinkpiece
+          </option>
+        </select>
+      </div>
     );
   }
 });
 
-module.exports = ChildClass;
+module.exports = Child;

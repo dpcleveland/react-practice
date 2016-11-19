@@ -7,10 +7,16 @@ var Parent = React.createClass({
     return { name: 'Frarthur' };
   },
 
+  changeName: function (newName) {
+  	this.setState({
+  		name: newName
+  	});
+  },
+
   render: function () {
     return (
     	<Child 
-    		name={this.state.name} />
+    		name={this.state.name} onChange={this.changeName} />
     );
   }
 });

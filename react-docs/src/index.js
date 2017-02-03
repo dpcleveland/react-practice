@@ -9,7 +9,12 @@ function BoilingVerdict(props) {
   return <p>The water would not boil.</p>
 }
 
-class Calculator extends React.Component {
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -26,15 +31,25 @@ class Calculator extends React.Component {
 
   render() {
     const value = this.state.value;
+    const scale = this.props.scale;
     return (
       <fieldset>
-        <legend>Enter temperature in Celsius:</legend>
+        <legend>Enter temperature in {scaleNames[scale]}:</legend>
         <input
           value={value}
           onChange={this.handleChange} />
-        <BoilingVerdict
-          celsius={parseFloat(value)} />
       </fieldset>
+    );
+  }
+}
+
+class Calculator extends React.Component {
+  render() {
+    return (
+      <div>
+        <TemperatureInput scale="c" />
+        <TemperatureInput scale="f" />
+      </div>
     );
   }
 }
